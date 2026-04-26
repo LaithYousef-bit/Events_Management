@@ -27,3 +27,31 @@ Web application for event creation, updates, and management using **Flask** and 
    ```bash
    git clone https://github.com/LaithYousef-bit/Events_Management.git
    cd Events_Management
+2. Create a virtual environment:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate   # Linux/Mac
+   venv\Scripts\activate      # Windows
+3. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+4. Run the application:
+   ```bash
+   python app.py
+5. Open in browser:
+   ```bash
+   http://127.0.0.1:5000/
+
+   
+## 📸 Screenshots
+
+### Homepage
+![Homepage](images/homepage.png)
+
+### View Details
+![View Details](images/view_details.png)
+
+### Create a New Event
+![Create a New Event](images/create_event.png)
+
+
