@@ -1,20 +1,32 @@
 {% extends "base.html" %}
 
-{% block title %}Home - EventsManagement{% endblock %}
+{% block title %}Home{% endblock %}
 
 {% block content %}
-    <h2>Upcoming Events</h2>
-    <div id="events">
+    <section class="page-intro">
+        <div class="intro-copy">
+            <h2>Upcoming events</h2>
+            <p>Browse the latest community activities, meetups, and workshops in your city.</p>
+        </div>
+    </section>
+
+    <section class="event-grid">
         {% for event in events %}
-            <div class="event">
-                <h3>
-                    <a href="{{ url_for('event_detail', event_id=event.id) }}">{{ event.title }}</a>
-                </h3>
-                <p>{{ event.description }}</p>
-                <small>Posted on: {{ event.date_posted.strftime('%Y-%m-%d') }}</small>
-            </div>
+            <article class="event-card">
+                <div class="event-card-top">
+                    <h3><a href="{{ url_for('event_detail', event_id=event.id) }}">{{ event.title }}</a></h3>
+                    <span class="badge">{{ event.location or 'Location TBD' }}</span>
+                </div>
+                <p>{{ event.description[:130] }}{% if event.description|length > 130 %}...{% endif %}</p>
+                <div class="event-meta">
+                    <span>{{ event.date_posted.strftime('%B %d, %Y') }}</span>
+                    <a class="btn btn-sm" href="{{ url_for('event_detail', event_id=event.id) }}">View details</a>
+                </div>
+            </article>
         {% else %}
-            <p>No events available.</p>
+            <div class="no-events">
+                <p>No events available yet. Use the button above to add your first event.</p>
+            </div>
         {% endfor %}
-    </div>
+    </section>
 {% endblock %}
