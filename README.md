@@ -46,12 +46,12 @@ Web application for event creation, updates, and management using **Flask** and 
 ## 📸 Screenshots
 
 ### Homepage
-![Homepage](images/homepage.png)
+![Homepage](images/Homepage.png)
 
 ### View Details
 ![View Details](images/view_details.png)
 
 ### Create a New Event
-![Create a New Event](images/create_event.png)
+![Create a New Event](images/Create_a_new_event.png)
 
 
