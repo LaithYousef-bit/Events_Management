@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %} Update Event {% endblock %}
+
+{% block content %}
+    <h1>Update Event</h1>
+
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.title.label }} {{ form.title(size=20) }}
+        </div>
+        <div>
+            {{ form.description.label }} {{ form.description(rows=4, cols=40) }}
+        </div>
+        <div>
+            {{ form.location.label }} {{ form.location(size=40) }}
+        </div>
+        <div>
+          {{ form.submit(class_='btn') }}  
+        </div>    
+    </form>
+{% endblock %}

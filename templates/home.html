@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Home - EventsManagement{% endblock %}
+
+{% block content %}
+    <h2>Upcoming Events</h2>
+    <div id="events">
+        {% for event in events %}
+            <div class="event">
+                <h3>
+                    <a href="{{ url_for('event_detail', event_id=event.id) }}">{{ event.title }}</a>
+                </h3>
+                <p>{{ event.description }}</p>
+                <small>Posted on: {{ event.date_posted.strftime('%Y-%m-%d') }}</small>
+            </div>
+        {% else %}
+            <p>No events available.</p>
+        {% endfor %}
+    </div>
+{% endblock %}
